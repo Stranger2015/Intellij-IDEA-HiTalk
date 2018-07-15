@@ -1,2 +1,2 @@
 # Intellij-idea-logtalk
-The LOGTALK language plugin for Intellij Idea IDE 
+The Logtalk language plugin for Intellij Idea IDE 
