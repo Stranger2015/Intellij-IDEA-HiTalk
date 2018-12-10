@@ -1,0 +1,15 @@
+Haxe File
+  PACKAGE_STATEMENT
+    HaxePsiToken:package('package')
+    REFERENCE_EXPRESSION
+      REFERENCE_EXPRESSION
+        REFERENCE_EXPRESSION
+          IDENTIFIER
+            HaxePsiToken:ID('com')
+        HaxePsiToken:.('.')
+        IDENTIFIER
+          HaxePsiToken:ID('fedor')
+      HaxePsiToken:.('.')
+      IDENTIFIER
+        HaxePsiToken:ID('test')
+    HaxePsiToken:;(';')

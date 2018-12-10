@@ -1,0 +1,79 @@
+/*
+ * Copyright 2000-2013 JetBrains s.r.o.
+ * Copyright 2014-2014 AS3Boyan
+ * Copyright 2014-2014 Elias Ku
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.intellij.plugins.logtalk.ide.module;
+
+import com.intellij.ide.util.projectWizard.ModuleWizardStep;
+import com.intellij.ide.util.projectWizard.ProjectJdkForModuleStep;
+import com.intellij.ide.util.projectWizard.WizardContext;
+import com.intellij.openapi.module.ModuleType;
+import com.intellij.openapi.module.ModuleTypeManager;
+import com.intellij.openapi.roots.ui.configuration.ModulesProvider;
+import com.intellij.plugins.logtalk.LogtalkBundle;
+import com.intellij.plugins.logtalk.config.sdk.LogtalkSdkType;
+
+import javax.swing.*;
+
+public class LogtalkModuleType extends ModuleType<LogtalkModuleBuilder> {
+  private static final String MODULE_TYPE_ID = "LOGTALK_MODULE";
+
+  public LogtalkModuleType() {
+    super(MODULE_TYPE_ID);
+  }
+
+  public static LogtalkModuleType getInstance() {
+    return (LogtalkModuleType)ModuleTypeManager.getInstance().findByID(MODULE_TYPE_ID);
+  }
+
+  @Override
+  public String getName() {
+    return LogtalkBundle.message("logtalk.module.type.name");
+  }
+
+  @Override
+  public String getDescription() {
+    return LogtalkBundle.message("logtalk.module.type.description");
+  }
+
+  // @Override - Missing from 2017.2
+  public Icon getBigIcon() {
+    return icons.LogtalkIcons.Logtalk_24;
+  }
+
+  @Override
+  public Icon getNodeIcon(boolean isOpened) {
+    return icons.LogtalkIcons.Logtalk_16;
+  }
+
+  @Override
+  public LogtalkModuleBuilder createModuleBuilder() {
+    return new LogtalkModuleBuilder();
+  }
+
+
+  public ModuleWizardStep[] createWizardSteps(final WizardContext wizardContext,
+                                              final LogtalkModuleBuilder moduleBuilder,
+                                              final ModulesProvider modulesProvider) {
+    return new ModuleWizardStep[]{new ProjectJdkForModuleStep(wizardContext, LogtalkSdkType.getInstance()) {
+      public void updateDataModel() {
+        super.updateDataModel();
+        moduleBuilder.setModuleJdk(getJdk());
+        // TODO: generate Main class as entry point for new projects
+      }
+    }};
+  }
+}

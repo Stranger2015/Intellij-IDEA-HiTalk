@@ -1,0 +1,14 @@
+class Implement2 implements IFoo<Bar> {
+
+    public function getFoo():Bar {
+    }
+
+    public var varInInterface:Bar;
+}
+
+interface IFoo<T> {
+  function getFoo():T;
+  var varInInterface:T;
+}
+
+class Bar {}

@@ -1,0 +1,706 @@
+{
+    parserClass="com.intellij.plugins.logtalk.lang.parser.HaxeParser"
+    parserUtilClass="com.intellij.plugins.logtalk.lang.parser.HaxeGeneratedParserUtilBase"
+
+    implements="com.intellij.plugins.logtalk.lang.psi.HaxePsiCompositeElement"
+    extends="com.intellij.plugins.logtalk.lang.psi.impl.HaxePsiCompositeElementImpl"
+
+    psiClassPrefix="Haxe"
+    psiImplClassSuffix="Impl"
+    psiPackage="com.intellij.plugins.logtalk.lang.psi"
+    psiImplPackage="com.intellij.plugins.logtalk.lang.psi.impl"
+
+    elementTypeHolderClass="com.intellij.plugins.logtalk.lang.lexer.HaxeTokenTypes"
+    elementTypeClass="com.intellij.plugins.logtalk.lang.lexer.HaxeElementType"
+    tokenTypeClass="com.intellij.plugins.logtalk.lang.lexer.HaxeElementType"
+
+    generateFirstCheck=100
+
+    tokens = [
+      pLCURLY="{"
+      pRCURLY="}"
+      pLBRACK="["
+      pRBRACK="]"
+      pLPAREN="("
+      pRPAREN=")"
+      oCOLON=":"
+      oSEMI=";"
+      oCOMMA=","
+      oDOT="."
+      oEQ="=="
+      oASSIGN="="
+      oNOT_EQ="!="
+      oNOT="!"
+      oCOMPLEMENT="~"
+      oPLUS_PLUS="++"
+      oPLUS_ASSIGN="+="
+      oPLUS="+"
+      oMINUS_MINUS="--"
+      oMINUS_ASSIGN="-="
+      oMINUS="-"
+
+      oQUEST="?"
+
+      oCOND_OR="||"
+      oBIT_OR="|"
+      oBIT_OR_ASSIGN="|="
+
+      oCOND_AND="&&"
+
+      oBIT_AND_ASSIGN="&="
+      oBIT_AND="&"
+
+      oSHIFT_LEFT_ASSIGN="<<="
+      oSHIFT_LEFT="<<"
+      oLESS_OR_EQUAL="<="
+      oLESS="<"
+
+      oBIT_XOR_ASSIGN="^="
+      oBIT_XOR="^"
+
+      oMUL_ASSIGN="*="
+      oMUL="*"
+
+      oQUOTIENT_ASSIGN="/="
+      oQUOTIENT="/"
+
+      oREMAINDER_ASSIGN="%="
+      oREMAINDER="%"
+
+      oUNSIGNED_SHIFT_RIGHT_ASSIGN=">>>="
+      oSHIFT_RIGHT_ASSIGN=">>="
+      oSHIFT_RIGHT=">>"
+      oUNSIGNED_SHIFT_RIGHT=">>>"
+
+      oGREATER_OR_EQUAL=">="
+      oGREATER=">"
+
+      oTRIPLE_DOT="..."
+      oIN="in"
+      oARROW='->'
+
+      oFAT_ARROW="=>"
+
+      oNEW="new"
+
+      ppIF="#if"
+      ppELSE="#else"
+      ppELSEIF="#elseif"
+      ppEND="#end"
+      ppERROR="#error"
+      ppLINE="#line"
+
+      kBREAK="break"
+      kDEFAULT="default"
+      kPACKAGE="package"
+      kFUNCTION="function"
+
+      kCASE="case"
+      kCAST="cast"
+
+      kABSTRACT="abstract"
+      kFROM="from"
+      kTO="to"
+
+      kCLASS="class"
+      kENUM="enum"
+      kINTERFACE="interface"
+
+      kIMPLEMENTS="implements"
+      kEXTENDS="extends"
+
+      kNULL ="null"
+      kTRUE ="true"
+      kFALSE ="false"
+      kTHIS ="this"
+      kSUPER ="super"
+
+      kIF ="if"
+      kFOR ="for"
+      kDO ="do"
+      kWHILE ="while"
+      kRETURN="return"
+      kIMPORT ="import"
+      kUSING ="using"
+      kCONTINUE ="continue"
+      kELSE ="else"
+      kSWITCH ="switch"
+      kTHROW ="throw"
+
+      kVAR="var"
+      kSTATIC="static"
+      kPUBLIC="public"
+      kPRIVATE="private"
+      kDYNAMIC="dynamic"
+      kNEVER="never"
+      kOVERRIDE="override"
+      kINLINE="inline"
+      kMACRO2="macro"
+
+      kUNTYPED="untyped"
+      kTYPEDEF="typedef"
+
+      kEXTERN="extern"
+      kFINAL="@:final"
+      kHACK="@:hack"
+      kNATIVE="@:native"
+      kMACRO="@:macro"
+      kBUILD="@:build"
+      kAUTOBUILD="@:autoBuild"
+      kKEEP="@:keep"
+      kREQUIRE="@:require"
+      kFAKEENUM="@:fakeEnum"
+      kCOREAPI="@:core_api"
+      kCOREAPIALT="@:coreApi"
+      kUNREFLECTIVE="@:unreflective"
+      kARRAYACCESS="@:arrayAccess"
+
+      kJSREQUIRE="@:jsRequire"
+
+      kBIND="@:bind"
+      kBITMAP="@:bitmap"
+      kNS="@:ns"
+      kPROTECTED="@:protected"
+      kGETTER="@:getter"
+      kSETTER="@:setter"
+      kDEBUG="@:debug"
+      kNODEBUG="@:nodebug"
+      kMETA="@:meta"
+      kOVERLOAD="@:overload"
+
+      kTRY="try"
+      kCATCH="catch"
+      tWILDCARD=".*"
+
+    ]
+    extends(".*(Expression|Literal)")="expression"
+    /* extends(".*Statement")="statement"
+     */
+    implements(".*Statement")="com.intellij.plugins.logtalk.lang.psi.HaxeStatementPsiMixin"
+    mixin(".*Statement")="com.intellij.plugins.logtalk.lang.psi.impl.HaxeStatementPsiMixinImpl"
+    pin(".*Expression")=1
+    pin(".*Statement")=1
+    pin(".*Meta")=1
+
+    generate=[names="short"]
+}
+
+haxeFile ::= packageStatement? topLevelList
+
+/*
+  http://logtalk.org/manual/metadata
+  http://logtalk.org/manual/tips_and_tricks
+*/
+
+// Eventually, these should all probably be defined below customMeta, so that they can take precedence.
+// Right now, customMeta is taking precedence because the MACRO_ID value is being returned from the lexer.
+finalMeta ::= '@:final'
+keepMeta ::= '@:keep'
+coreApiMeta ::= '@:coreApi'
+bindMeta ::= '@:bind'
+private macroMeta ::= '@:macro'
+hackMeta ::= '@:hack'
+protectedMeta ::= '@:protected'
+debugMeta ::= '@:debug'
+noDebugMeta ::= '@:nodebug'
+unreflectiveMeta ::= '@:unreflective'
+arrayAccessMeta ::= '@:arrayAccess'
+
+simpleMeta ::= unreflectiveMeta | finalMeta | keepMeta | coreApiMeta | bindMeta | macroMeta | hackMeta | arrayAccessMeta
+
+macroClass ::= simpleMeta | requireMeta | fakeEnumMeta | nativeMeta | jsRequireMeta | bitmapMeta | nsMeta | customMeta | metaMeta | buildMacro | autoBuildMacro
+macroClassList ::= macroClass (macroClass)* {mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeModifierListPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeModifierList"
+elementTypeClass="com.intellij.plugins.logtalk.lang.lexer.HaxeMacroClassListElementType"}
+//','
+
+private functionMacroMember ::= finalMeta | macroMember | overloadMeta | arrayAccessMeta
+private macroMember ::= macroMeta | protectedMeta | debugMeta | noDebugMeta | keepMeta | nativeMeta
+                       | requireMeta | nsMeta | getterMeta | setterMeta | customMeta | metaMeta | buildMacro | autoBuildMacro | finalMeta
+
+buildMacro ::= '@:build' '(' referenceExpression (callExpression | arrayAccessExpression | qualifiedReferenceExpression)* ')' {pin=2}
+autoBuildMacro ::= '@:autoBuild' '(' referenceExpression (callExpression | arrayAccessExpression | qualifiedReferenceExpression)* ')' {pin=2}
+private haxeVerExpr ::= 'haxe_ver' compareOperation LITFLOAT
+private identifierList ::= identifier (',' identifier)*
+requireMeta ::=  '@:require' '(' (haxeVerExpr | identifierList) ')'
+fakeEnumMeta ::=  '@:fakeEnum' '(' type ')'
+nativeMeta ::=  '@:native' '(' stringLiteralExpression ')'
+bitmapMeta ::= '@:bitmap' '(' stringLiteralExpression ')'
+nsMeta ::= '@:ns' '(' stringLiteralExpression ')'
+getterMeta ::= '@:getter' '(' referenceExpression ')'
+setterMeta ::= '@:setter' '(' referenceExpression ')'
+overloadMeta ::= '@:overload' '(' anonymousFunctionDeclaration ')'
+customMeta ::= MACRO_ID ('(' expressionList? ')')?
+metaMeta ::= '@:meta' ('(' ID '(' metaPartList? ')' ')')?
+private metaPartList ::= metaKeyValue (',' metaKeyValue)*
+metaKeyValue ::= ID '=' stringLiteralExpression
+
+jsRequireMeta ::= "@:jsRequire" '(' stringLiteralExpression (',' stringLiteralExpression)* ')'
+
+private metaKeyWord ::= MACRO_ID | '@:final' | '@:hack' | '@:native' | '@:macro' | '@:build' | '@:autoBuild' | '@:keep' | '@:require' | '@:fakeEnum' | '@:core_api' | '@:bind' | '@:bitmap' | '@:ns' | '@:protected' | '@:getter' | '@:setter' | '@:debug' | '@:nodebug' | '@:meta' | '@:overload' | '@:jsRequire' | '@:arrayAccess'
+
+private ppConditionalStatement ::= CONDITIONAL_STATEMENT_ID
+private ppToken ::= '#if' | "#elseif" | "#else" | "#end" | "#error" | "#line" | ppConditionalStatement
+
+
+/*
+ * Operators.  Priority is ascending; that is: the stuff lower down in the file
+ * is matched before things closer to the top.  Thus, unsignedShiftRight must come
+ * after shiftRight so that it has priority.
+ */
+shiftLeftOperator ::= '<<'
+shiftRightOperator ::= <<shiftRight>>
+unsignedShiftRightOperator ::= <<unsignedShiftRight>>
+
+shiftLeftAssignOperator ::= '<<='
+shiftRightAssignOperator ::= <<shiftRightAssign>>
+unsignedShiftRightAssignOperator ::= <<unsignedShiftRightAssign>>
+
+shiftOperator ::= unsignedShiftRightOperator | shiftRightOperator | shiftLeftOperator
+shiftAssignOperator ::= unsignedShiftRightAssignOperator | shiftRightAssignOperator | shiftLeftAssignOperator
+
+assignOperation ::= '=' | '+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' | shiftAssignOperator
+compareOperation ::= '==' | '!=' | '<=' | '<' | <<gtEq>> | '>'
+bitOperation ::= '|' | '&' | '^'
+
+packageStatement ::= 'package' simpleQualifiedReferenceExpression? ';'
+{pin=1 implements="com.intellij.plugins.logtalk.lang.psi.HaxePackageStatementPsiMixin" mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxePackageStatementPsiMixinImpl"}
+
+private topLevelList ::= topLevel*
+private topLevel ::= importStatement | usingStatement | topLevelDeclaration {recoverWhile="top_level_recover"}
+private top_level_recover ::= !(ppToken | metaKeyWord | 'abstract' | 'class'  | 'enum' | 'extern' | 'import' | 'using' | 'interface' | 'private' | 'typedef')
+
+private importAlias ::= ('in' | 'as') identifier {elementType="identifier"}
+importWildcard ::= '.*'
+importStatement ::= 'import' simpleQualifiedReferenceExpression [importWildcard | importAlias]';'
+{
+  implements="com.intellij.plugins.logtalk.lang.psi.HaxeImportStatementPsiMixin"
+  mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeImportStatementPsiMixinImpl"
+  methods=[
+    alias="identifier";
+    wildcard="importWildcard"
+  ]
+}
+
+usingStatement ::= 'using' simpleQualifiedReferenceExpression ';'
+{
+  implements="com.intellij.plugins.logtalk.lang.psi.HaxeUsingStatementPsiMixin"
+  mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeUsingStatementPsiMixinImpl"
+}
+
+private topLevelDeclaration ::= classDeclaration
+                              | interfaceDeclaration
+                              | externClassDeclaration
+                              | externInterfaceDeclaration
+                              | abstractClassDeclaration
+                              | enumDeclaration
+                              | typedefDeclaration
+
+privateKeyWord ::= 'private'
+externKeyWord ::= 'extern'
+
+private externPrivate ::= externKeyWord privateKeyWord
+private privateExtern ::= privateKeyWord externKeyWord
+private externOrPrivate ::= externPrivate | privateExtern | privateKeyWord | externKeyWord
+
+private externAndMaybePrivate1 ::= privateKeyWord? externKeyWord
+private externAndMaybePrivate2 ::= externKeyWord privateKeyWord?
+private externAndMaybePrivate ::= externAndMaybePrivate2 | externAndMaybePrivate1
+
+typedefDeclaration ::= macroClassList? externOrPrivate? 'typedef' componentName genericParam? '=' typeWrapper ';'?
+{pin=5 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxeTypeDefImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+
+externClassDeclaration ::= macroClassList? externAndMaybePrivate 'class' componentName genericParam? inheritList? '{' externClassDeclarationBody '}'
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxePsiClass" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+externClassDeclarationBody ::= externClassDeclarationBodyPart*
+private externClassDeclarationBodyPart ::= varDeclaration | externFunctionDeclaration {recoverWhile="extern_class_body_part_recover"}
+private extern_class_body_part_recover ::= !(pptoken | metaKeyWord | 'dynamic' | 'function' | 'inline' | 'override' | 'private' | 'public' | 'static' | 'var' | '}')
+
+externInterfaceDeclaration ::= macroClassList? externAndMaybePrivate? 'interface' componentName genericParam? inheritList? '{' interfaceBody '}'
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxePsiClass" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+
+classDeclaration ::= macroClassList? privateKeyWord? 'class' componentName genericParam? inheritList? '{' classBody '}'
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxePsiClass" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+
+//'from' | 'to'
+underlyingType ::= '(' typeWrapper ')'
+abstractClassDeclaration ::= macroClassList? privateKeyWord? 'abstract' componentName genericParam? underlyingType? ((identifier) type)* '{' abstractBody '}'
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxePsiClass" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+abstractBody ::= abstractBodyPart*  {extends="classBody"}
+private abstractBodyPart ::= varDeclaration | functionDeclarationWithAttributes | functionPrototypeDeclarationWithAttributes {recoverWhile="class_body_part_recover"}
+
+classBody ::= classBodyPart*
+private classBodyPart ::= varDeclaration | functionDeclarationWithAttributes {recoverWhile="class_body_part_recover"}
+private class_body_part_recover ::= !(ppToken | metaKeyWord | 'dynamic' | 'function' | 'inline' | 'override' | 'private' | 'public' | 'static' | 'var' | '}' | 'macro')
+
+interfaceDeclaration ::= macroClassList? privateKeyWord? 'interface' componentName genericParam? inheritList? '{' interfaceBody '}'
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxePsiClass" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+interfaceBody ::= interfaceBodyPart*
+private interfaceBodyPart ::= varDeclaration | functionPrototypeDeclarationWithAttributes {recoverWhile="interface_body_part_recover"}
+private interface_body_part_recover ::= !(ppToken | metaKeyWord | 'dynamic' | 'function' | 'inline' | 'override' | 'private' | 'public' | 'static' | 'var' | '}')
+
+enumDeclaration ::= macroClassList? externOrPrivate? 'enum' componentName genericParam? '{' enumBody '}'
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxePsiClass" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+enumBody ::= enumValueDeclaration*
+
+/*
+ *  declarations
+ */
+
+access ::= 'public' | 'private'
+declarationAttribute ::= 'static' | 'inline' | 'dynamic' | 'override' | 'macro' | access
+
+enumValueDeclaration ::= componentName genericParam? enumConstructorParameters? typeTag? ';'
+{recoverWhile="enum_value_declaration_recovery" mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxePsiFieldImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxePsiField" methods=[returnType="typeTag"]}
+
+private enum_value_declaration_recovery ::= !(ID | '}')
+
+private enumConstructorParameters ::= parenthesizedParameterList
+
+varDeclaration ::= (macroMember | declarationAttribute)* 'var' componentName propertyDeclaration? typeTag? varInit? <<semicolonUnlessPrecededByStatement>>
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxePsiFieldImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxePsiField"}
+
+
+localVarDeclarationList ::= 'var' localVarDeclaration (',' localVarDeclaration)* <<semicolonUnlessPrecededByStatement>>{pin=2}
+localVarDeclaration ::= componentName propertyDeclaration? typeTag? varInit?
+{recoverWhile="local_var_declaration_part_recover" mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxePsiFieldImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxePsiField"}
+private local_var_declaration_part_recover ::= !('!' | ppToken | '(' | ')' | '++' | ',' | '-' | '--' | ';' | '[' | 'break' | 'case' | 'cast' | 'continue' | 'default' | 'do' | 'else' | 'false' | 'for' | 'function' | 'if' | 'new' | 'null' | 'return' | 'super' | 'switch' | 'this' | 'throw' | 'true' | 'try' | 'untyped' | 'var' | 'while' | '{' | '}' | '~' | ID | OPEN_QUOTE | LITFLOAT | LITHEX | LITINT | LITOCT | REG_EXP)
+
+propertyDeclaration ::= '(' propertyAccessor ',' propertyAccessor ')'
+
+propertyAccessor ::= 'null' | 'default' | 'dynamic' | 'never' | 'get' | 'set' | referenceExpression
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+private functionCommonBody ::= blockStatement
+                             | returnStatement
+                             | throwStatement
+                             | ifStatement
+                             | forStatement
+                             | whileStatement
+                             | doWhileStatement
+                             | expression
+
+constructorId ::= 'new' {elementType="identifier"}
+constructorName ::= constructorId {elementType="componentName"}
+
+private localFunctionDeclarationAttribute ::= 'inline';
+
+// XXX: EMB - Not sure why we need all three of these.  They are increasingly similar.
+externFunctionDeclaration                  ::= (functionMacroMember | declarationAttribute)* 'function' (constructorName | componentName) genericParam? parenthesizedParameterList typeTag? 'untyped'? ((functionCommonBody <<semicolonUnlessPrecededByStatement>>) | ';')
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeMethodImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeMethod"}
+functionDeclarationWithAttributes          ::= (functionMacroMember | declarationAttribute)* 'function' (constructorName | componentName) genericParam? parenthesizedParameterList typeTag? 'untyped'? functionCommonBody <<semicolonUnlessPrecededByStatement>>
+{pin=8 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeMethodImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeMethod"}
+functionPrototypeDeclarationWithAttributes ::= (functionMacroMember | declarationAttribute)* 'function' (constructorName | componentName) genericParam? parenthesizedParameterList typeTag? 'untyped'? ';'
+{pin=8 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeMethodImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeMethod"}
+localFunctionDeclaration ::= localFunctionDeclarationAttribute? 'function' componentName? genericParam? parenthesizedParameterList typeTag? 'untyped'? functionCommonBody
+{pin=2 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeMethodImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeMethod"}
+anonymousFunctionDeclaration ::= 'function' parenthesizedParameterList typeTag? 'untyped'? '{' '}' {pin=2}
+/* TODO: Should anonymousFunctionDeclaration extend and implement HaxeMethod as well?? */
+private arrowFunctionParameterList ::= openParameterList | parenthesizedParameterList
+private arrowFunctionDeclaration ::=  arrowFunctionParameterList '->' functionCommonBody
+
+/*
+ *
+ */
+
+varInit ::= '=' expression {pin=1}
+parameter ::= '?'? componentName typeTag? varInit?
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeParameterPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeParameterPsiMixin"}
+
+// An open parameter can't have all of the type and init info.  Plus, it makes the parser *very* *very* slow in some circumstances.
+openParameterList ::= componentName {extends=parameterList}
+private parenthesizedParameterList ::= '(' parameterList ')'
+parameterList ::= (parameter (',' parameter)*)? {recoverWhile="parameterListRecovery" mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeParameterListPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeParameterListPsiMixin"}
+private parameterListRecovery ::= !('(' | ')')  // Open parens are allowable in arrow function arguments.
+
+private arrowFunctionLiteral ::= arrowFunctionDeclaration
+private keywordFunctionLiteral ::= 'function' componentName? parenthesizedParameterList typeTag? 'untyped'? functionCommonBody {pin=2}
+functionLiteral ::= keywordFunctionLiteral | arrowFunctionLiteral
+
+arrayLiteral ::= '[' (expressionList ','?)? ']'
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+mapLiteral ::= '[' (mapInitializerStatement | mapInitializerExpressionList) ']'
+{pin=2 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+
+private functionTypeWrapper ::= functionTypeOrWrapper functionType*
+private functionTypeOrWrapper ::= '?'? typeOrAnonymous | '(' functionTypeWrapper ')'
+left functionType ::= '->' '?'? typeOrAnonymous
+
+private typeWrapper::= functionTypeWrapper
+
+// EMB: To replace the above four lines.  See issue #575. //////////////////////////////////
+//functionArgument ::=  (typeOrAnonymous | ('(' functionType ')'))
+//private functionOptionalArgument ::= '?'? functionArgument
+//functionType ::= functionOptionalArgument '->' (functionOptionalArgument '->')* functionArgument {pin=2 recoverWhile="functionTypeRecovery"}
+//functionTypeRecovery ::= !('}' | ';' | '>' | '=')
+//
+//private typeWrapper ::= functionType | typeOrAnonymous
+// /////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * Haxe and Java have this backward from each other.
+ *
+ * Haxe PSI type:                      Corresponding Java PSI Type:
+ * =======================             =============================
+ * TYPE_PARAM..........................PsiTypeParameterList
+ * TYPE_LIST...........................n/a
+ * TYPE_LIST_PART......................PsiTypeParameter
+ *
+ * There is a PsiType class but its not an element of the PSI.
+ * There is a PsiTypeElement class that /is/ part of the tree, though it's pretty low-level.
+ *
+ */
+
+typeTag ::= ':' typeWrapper
+typeParam ::= '<' typeList '>'  {mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeTypeParamPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeTypeParamPsiMixin"}
+typeList ::= typeListPart (',' typeListPart)*
+genericParam ::= '<' genericListPart (',' genericListPart)* '>'
+genericListPart ::= regularGenericListPart | constGenericListPart
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.AbstractHaxeNamedComponent" implements="com.intellij.plugins.logtalk.lang.psi.HaxeComponent"}
+private regularGenericListPart ::= macroMember* componentName (':' ('(' typeList ')' | typeListPart))? {pin=2}
+// constGenericListPart is only available when the macroMember is '@:const' (constMeta).  It's only useful in macros.
+// We can't use constMeta here until the lexer returns a string for macros instead of MACRO_ID.
+private constGenericListPart ::= macroMember+ constantExpression (':' ('(' typeList ')' | typeListPart))? {pin=2}
+
+typeListPart ::= typeWrapper | literalExpression
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeTypeListPartPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeTypeListPartPsiMixin"}
+type ::= referenceExpression qualifiedReferenceExpression* typeParam?
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeTypePsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeTypePsiMixin"}
+typeOrAnonymous ::= type | anonymousType
+
+blockStatement ::= '{' statementList? '}' {mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeBlockStatementPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeBlockStatementPsiMixin" extends="com.intellij.plugins.logtalk.lang.psi.HaxeBlockStatementPsiMixin"}
+private statementList ::= (statement ';'?)+ {recoverWhile="statement_recovery"}
+private statement_recovery ::= !('case' | 'default' | '}')
+
+private statement ::= macroClassList? (blockStatement | notBlockStatement)
+{pin=2 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeStatementPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeStatementPsiMixin"}
+
+private notBlockStatement ::= ('untyped' statement ';'?)
+                            | ('macro' statement ';'?)
+                            | localVarDeclarationList
+                            | localFunctionDeclaration
+                            | ifStatement
+                            | forStatement
+                            | whileStatement
+                            | doWhileStatement
+                            | returnStatement
+                            | breakStatement
+                            | continueStatement
+                            | switchStatement
+                            | throwStatement
+                            | tryStatement
+                            | expression
+
+ifStatement ::= 'if' '(' expression ')' statement ';'? ('else' statement ';'?)?
+
+forStatement ::= 'for' '(' componentName 'in' iterable')' statement ';'?
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeForStatementPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeForStatementPsiMixin"}
+// XXX: Somehow or another, forStatement must derive from AbstractHaxeNamedComponent, or variable resolution will break.
+
+iterable ::= expression
+
+whileStatement ::= 'while' '(' expression ')' statement ';'?
+doWhileStatement ::= 'do' statement 'while' '(' expression ')' ';'
+
+returnStatement ::= 'return' (objectLiteral | ("macro"? blockStatement) | expression )? ';'?
+returnStatementWithoutSemicolon ::= 'return' expression
+
+breakStatement ::= 'break' ';'
+continueStatement ::= 'continue' ';'
+
+throwStatement ::= 'throw' expression ';'?
+
+switchStatement ::= 'switch' expression switchBlock
+switchBlock ::= '{'  switchCase* defaultCase? '}' {pin=1}
+switchCaseBlock ::= (literalExpression <<semicolonUnlessPrecededByStatement>>) | statementList
+switchCase ::= ('case' switchCaseExpression (',' switchCaseExpression)* ':')+ switchCaseBlock? {pin=1 recoverWhile="switch_case_recover"}
+switchCaseExpression ::= expression ('if' '(' expression ')')? {pin=1 extends="expression"}
+private switch_case_recover ::= !('case' | 'default' | '}' | ID)
+defaultCase::= 'default' ':' switchCaseBlock? {pin=1}
+
+tryStatement ::= 'try' statement ';'? catchStatement*
+catchStatement ::= 'catch' '(' parameter ')' statement ';'?
+
+mapInitializerForStatement ::= 'for' '(' componentName 'in' iterable ')' (mapInitializerExpression | mapInitializerStatement)
+{pin=7 methods=[mapInitializer="expression"] extends=forStatement mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeForStatementImpl"}
+mapInitializerWhileStatement ::= 'while' '(' expression ')' (mapInitializerExpression | mapInitializerStatement)
+{pin=5 methods=[condition="expression[0]" mapInitializer="expression[1]"] extends=whileStatement mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeWhileStatementImpl"}
+private mapInitializerStatement ::= mapInitializerForStatement
+                                  | mapInitializerWhileStatement
+/*
+ * expressions
+ */
+
+mapInitializerExpressionList ::= mapInitializerExpression (',' mapInitializerExpression)* ','? {recoverWhile=expression_list_recover}
+mapInitializerExpression ::= iteratorExpressionWrapper fatArrowExpression {pin=2}
+
+expressionList ::= forStatement | whileStatement | (expression (',' expression)*) ','? {recoverWhile="expression_list_recover"}
+private expression_list_recover ::= !(')' | ']')
+
+expression ::= assignExpressionWrapper {recoverWhile="expression_recover"}
+private expression_recover ::= !('!' | '!=' | '%' | '%=' | '&&' | '&' | '&=' | '(' | ')' | '*' | '*=' | '+' | '++' | '+=' | ',' | '-' | '--' | '-=' | '.' | '...' | '/' | '/=' | ':' | ';' | '<' | '<<' | '<<=' | '<=' | '=' | '==' | '>' | <<shiftRight>> | <<unsignedShiftRight>> | <<gtEq>> | <<shiftRightAssign>> | <<unsignedShiftRightAssign>> | '?' | metaKeyWord | '[' | ']' | '^' | '^=' | 'break' | 'case' | 'cast' | 'catch' | 'continue' | 'default' | 'do' | 'dynamic' | 'else' | 'false' | 'for' | 'function' | 'if' | 'inline' | 'new' | 'null' | 'override' | 'private' | 'public' | 'return' | 'static' | 'super' | 'switch' | 'this' | 'throw' | 'true' | 'try' | 'untyped' | 'var' | 'while' | '{' | '|' | '|=' | '||' | '}' | '~' | ID | LITFLOAT | LITHEX | LITINT | LITOCT | OPEN_QUOTE | CLOSING_QUOTE | MACRO_ID | REG_EXP | LONG_TEMPLATE_ENTRY_END | '=>')
+
+private assignExpressionWrapper ::= fatArrowExpressionWrapper assignExpression?
+left assignExpression ::= assignOperation fatArrowExpressionWrapper { pin=2 }
+
+private fatArrowExpressionWrapper ::= iteratorExpressionWrapper fatArrowExpression?
+left fatArrowExpression ::= '=>' iteratorExpressionWrapper {pin=2}
+
+private iteratorExpressionWrapper ::= ternaryExpressionWrapper iteratorExpression?
+left iteratorExpression ::= '...' ternaryExpressionWrapper {pin=2}
+
+private ternaryExpressionWrapper ::= logicOrExpressionWrapper ternaryExpression?
+left ternaryExpression ::= '?' expression ':' ternaryExpressionWrapper {pin=2}
+
+private logicOrExpressionWrapper ::= logicAndExpressionWrapper logicOrExpression*
+left logicOrExpression ::= '||' logicAndExpressionWrapper {pin=2}
+
+private logicAndExpressionWrapper ::= compareExpressionWrapper logicAndExpression*
+left logicAndExpression ::= '&&' compareExpressionWrapper {pin=2}
+
+private compareExpressionWrapper ::= bitwiseExpressionWrapper compareExpression*
+left compareExpression ::= compareOperation bitwiseExpressionWrapper {pin=2}
+
+private bitwiseExpressionWrapper ::= shiftExpressionWrapper bitwiseExpression*
+left bitwiseExpression ::= bitOperation shiftExpressionWrapper {pin=2}
+
+private shiftExpressionWrapper ::= additiveExpressionWrapper shiftExpression*
+left shiftExpression ::= shiftOperator additiveExpressionWrapper {pin=2}
+
+private additiveExpressionWrapper ::= multiplicativeExpressionWrapper additiveExpression*
+left additiveExpression ::= ('+' | '-') multiplicativeExpressionWrapper {pin=2}
+
+private multiplicativeExpressionWrapper ::= prefixExpression multiplicativeExpression*
+left multiplicativeExpression ::= ('*' | '/' | '%') (prefixExpression | suffixExpressionWrapper) {pin=2}
+
+prefixExpression ::= ('-' | '--' | '++' | '!' | '~') prefixExpression | suffixExpressionWrapper
+
+/* Technically, assignExpressions don't have higher priority than everything else.
+ * But for parsing, this makes sense; otherwise, assignment operators that comprise
+ * multiple lexemes (e.g. '>' '=') have their primary token(s) taken as an operator
+ * while the leftover '=' causes a syntax error because it's not the expected expression.
+ */
+private suffixExpressionWrapper ::= value (assignExpression | suffixExpression)*
+left suffixExpression ::= ('--' | '++')
+
+// Be careful when changing the ordering of the 'or' clauses here.  It matters!!
+// In particular, callFunctionLiteral must come before (literalExpression qualifiedReferenceTail?).
+// If callOrArrayAccess comes before literalExpression, then referenceExpression (as part of callOrArrayAccess)
+// will take the first identifier and the rest will not match properly.
+private value ::= macroClassList? (('untyped' expression)
+                                                   | 'macro' expression
+                                                   | callFunctionLiteral
+                                                   | (literalExpression qualifiedReferenceTail?)
+                                                   | callOrArrayAccess
+                                                   | ifStatement
+                                                   | (castExpression qualifiedReferenceTail?)
+                                                   | newExpressionOrCall
+                                                   | parenthesizedExpressionOrCall
+                                                   | tryStatement
+                                                   | switchStatement
+                                                   | throwStatement
+                                                   | varDeclaration)
+{pin=2}
+
+literalExpression ::= LITINT | LITHEX | LITOCT | LITFLOAT
+                    | regularExpressionLiteral
+                    | 'null' | 'true' | 'false'
+                    | functionLiteral
+                    | mapLiteral
+                    | arrayLiteral
+                    | objectLiteral
+                    | stringLiteralExpression
+                    | blockStatement
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+constantExpression ::= LITINT | LITHEX | LITOCT | LITFLOAT
+                             | regularExpressionLiteral
+                             | 'null' | 'true' | 'false'
+                             |stringLiteralExpression
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+
+stringLiteralExpression ::= OPEN_QUOTE (REGULAR_STRING_PART | shortTemplateEntry | longTemplateEntry)* CLOSING_QUOTE
+{pin=1 mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+shortTemplateEntry ::= SHORT_TEMPLATE_ENTRY_START (thisExpression | referenceExpression) {pin=1}
+longTemplateEntry ::= LONG_TEMPLATE_ENTRY_START expression LONG_TEMPLATE_ENTRY_END {pin=1}
+
+regularExpressionLiteral ::= REG_EXP
+{extends="literalExpression" mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeRegularExpressionImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeRegularExpression"}
+
+private parenthesizedExpressionOrCall ::= parenthesizedExpression qualifiedReferenceTail?
+parenthesizedExpression ::= '(' (typeCheckExpr | expression | statement) ')'
+
+typeCheckExpr ::= expression ':' typeWrapper
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeClassReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+private newExpressionOrCall ::= newExpression qualifiedReferenceTail?
+private qualifiedReferenceTail ::= qualifiedReferenceExpression (callExpression | arrayAccessExpression | qualifiedReferenceExpression)*
+
+private callFunctionLiteral ::= functionLiteral callExpression
+private callOrArrayAccess ::= (referenceExpression | thisExpression | superExpression | parenthesizedExpression) (callExpression | arrayAccessExpression | qualifiedReferenceExpression)*
+
+left callExpression ::= '(' expressionList? ')'
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+left arrayAccessExpression ::= '[' expression ']'
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+referenceExpression ::= identifier
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+left qualifiedReferenceExpression ::= '.' identifier {elementType="referenceExpression" pin=2}
+private simpleQualifiedReferenceExpression ::= referenceExpression qualifiedReferenceExpression * { elementType="referenceExpression"}
+
+componentName ::= identifier
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeNamedElementImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeNamedElement"}
+identifier ::= ID
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeIdentifierPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeIdentifierPsiMixin"}
+
+thisExpression ::= 'this'
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+superExpression ::= 'super'
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+// XXX - This could be callExpression, and it makes sense that newExpression would extend/implement callExpression,
+//       but that affects a lot of code and is best not attempted just before a release...
+//private newCallExpression ::= '(' expressionList? ')'
+//newExpression ::= 'new' type newCallExpression
+private newExpressionArgumentsList ::= '(' [!')' expression (',' expression)*] ')' {pin(".*")=1}
+newExpression ::= 'new' type newExpressionArgumentsList
+{pin=2 recoverWhile="expression_recover" mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+castExpression ::= 'cast' (('(' expression ',' typeWrapper ')')  | expression)
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeClassReferenceImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeReference"}
+
+inheritList ::= inherit (','? inherit)*
+
+private inherit ::= extendsDeclaration | implementsDeclaration
+{pin=1 recoverWhile="inherit_recover" mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeInheritPsiMixinImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeInheritPsiMixin"}
+private inherit_recover ::= !(',' | '{' | 'extends' | 'implements')
+
+extendsDeclaration ::= 'extends' type {mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeInheritImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeInherit" pin=1}
+implementsDeclaration ::= 'implements' type {mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxeInheritImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeInherit" pin=1}
+
+anonymousType ::= '{' anonymousTypeBody '}'
+{pin=3 mixin="com.intellij.plugins.logtalk.lang.psi.impl.AnonymousHaxeTypeImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxeClass"}
+
+anonymousTypeBody ::= extendedAnonymousTypeBody | simpleAnonymousTypeBody | interfaceBody
+private extendedAnonymousTypeBody ::= typeExtendsList (',' anonymousTypeFieldList)? (',' interfaceBody)?
+private simpleAnonymousTypeBody ::= anonymousTypeFieldList (',' interfaceBody)?
+
+typeExtendsList ::= '>' type (',' '>' type)*
+
+anonymousTypeFieldList ::= anonymousTypeField (',' anonymousTypeField)*
+
+anonymousTypeField ::= "?"? componentName typeTag
+{mixin="com.intellij.plugins.logtalk.lang.psi.impl.HaxePsiFieldImpl" implements="com.intellij.plugins.logtalk.lang.psi.HaxePsiField"}
+
+// Do NOT genericize objectLiteral by making objectLiteralElementList optional.  Doing so
+// makes blockStatement be overridden by objectLiteral in return statements.
+private emptyObjectLiteral ::= '{' '}'
+objectLiteral ::= ('{' objectLiteralElementList+ '}') | emptyObjectLiteral
+
+private objectLiteralElementList ::= objectLiteralElement (',' objectLiteralElement)* ','? {recoverWhile="object_literal_list_recover"}
+private object_literal_list_recover ::= !('}')
+
+objectLiteralElement ::= (identifier | stringLiteralExpression) ':' expression {recoverWhile="object_literal_part_recover"}
+private object_literal_part_recover ::= !(',' | '}')

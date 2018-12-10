@@ -1,0 +1,94 @@
+Recent contributors
+-----------------------------------
+ - artem pecheny <pecheny@gmail.com>
+ - as3boyan <denis.flash.as3@gmail.com>
+ - David Nemcok <nemcok.david@gmail.com>
+ - Eric Bishton <ebishton@ix.netcom.com>
+ - EricBishton <ebishton.ix.netcom.com>
+ - EricBishton <ebishton@ix.netcom.com>
+ - Eric Bishton <EricBishton@users.noreply.github.com>
+ - GitHub <noreply@github.com>
+ - Jens Fischer <jensfischer95@gmail.com>
+ - m0rkeulv <github@m0rkeulv.net>
+ - mayakwd <loremipsum.inside@gmail.com>
+ - Slava Buynov <slavab@playtika.com>
+ - The Codacy Badger <badger@codacy.com>
+
+All contributors
+-----------------------------------
+- Alexander Doroshko <alexander.doroshko@jetbrains.com>
+- Alexey Kudravtsev <cdr@intellij.com>
+- anna <Anna.Kozlova@jetbrains.com>
+- artem pecheny <pecheny@gmail.com>
+- as3boyan <denis.flash.as3@gmail.com>
+- AS3Boyan <denis.flash.as3@gmail.com>
+- bjitivo <bji@tivo.com>
+- Bruno Garcia <b@aduros.com>
+- Bryan Ischo <bryan@ischo.com>
+- bynuff <igor.bulankov@gmail.com>
+- Carlos Ballesteros Velasco <soywiz@gmail.com>
+- Chris Decoster <impaler777@gmail.com>
+- Constantine Plotnikov <constantine.plotnikov@gmail.com>
+- David Nemcok <nemcok.david@gmail.com>
+- Denis.Zhdanov <denzhdanov@gmail.com>
+- Dmitry Avdeev <Dmitry.Avdeev@jetbrains.com>
+- Dmitry Jemerov <yole@jetbrains.com>
+- Dmitry Lomov <dmitry.lomov@jetbrains.com>
+- EBatTiVo <ebishton@tivo.com>
+- eliasku <deadbabe@gmail.com>
+- Elias Ku <deadbabe@gmail.com>
+- Eric B <ebishton@tivo.com>
+- Eric Bishton <ebishton@Erics-MacBook-Pro.local>
+- Eric Bishton <ebishton@ix.netcom.com>
+- EricBishton <ebishton.ix.netcom.com>
+- EricBishton <ebishton@ix.netcom.com>
+- Eric Bishton <EricBishton@users.noreply.github.com>
+- Eugene Zhuravlev <jeka@intellij.com>
+- Evgeny Pasynkov <Evgeny.Pasynkov@jetbrains.com>
+- Evgeny Zakrevsky <evgeny.zakrevsky@jetbrains.com>
+- Fedor Korotkov <fedor.korotkov@gmail.com>
+- Fedor Korotkov <fedor.korotkov@jetbrains.com>
+- Fedor Korotkov <fedor.korotkov@odnoklassniki.ru>
+- fkorotkov <fkorotkov@twitter.com>
+- Gabor Csomak <csomakk@gmail.com>
+- giabao <giabao@sandinh.net>
+- GitHub <noreply@github.com>
+- Gregory.Shrago <gregory.shrago@jetbrains.com>
+- grosmar <zubak.balazs@gmail.com>
+- Hays Clark <hays@infinitedescent.com>
+- Ilya Kuzmichev <deadbabe@gmail.com>
+- Ilya Kuzmichev <IlyaK@playtika.by>
+- Ilya Kuzmichev <ilyak@playtika.com>
+- impaler <user123@server.fake>
+- isBatak <ivicabatinic123@gmail.com>
+- Jens Fischer <jensfischer95@gmail.com>
+- Jérémy Faivre <jeremy.faivre@gmail.com>
+- jeremyfa <jeremy.faivre@gmail.com>
+- kirill.safonov <kirill.safonov@jetbrains.com>
+- Kirill Safonov <kirill.safonov@jetbrains.com>
+- m0rkeulv <github@m0rkeulv.net>
+- Maxim.Mossienko <Maxim.Mossienko@jetbrains.com>
+- Maxim Shafirov <max@jetbrains.com>
+- mayakwd <loremipsum.inside@gmail.com>
+- nik <Nikolay.Chashnikov@jetbrains.com>
+- Oleg Sukhodolsky <oleg.sukhodolsky@jetbrains.com>
+- peter <peter@jetbrains.com>
+- Richard Lee <git@richardlee.name>
+- Roman Shevchenko <roman.shevchenko@jetbrains.com>
+- Rustam Vishnyakov <rustam.vishnyakov@jetbrains.com>
+- sganapavarapu1 <ganapavarapu@tivo.com>
+- Slava Buynov <slavab@playtika.com>
+- slavara <ratdg@ya.ru>
+- Srikanth Ganapavarapu <ganapavarapu@tivo.com>
+- The Codacy Badger <badger@codacy.com>
+- Tim Hepner <tim@hepners.net>
+- Todd Brannam <tbrannam@casualpenguin.com>
+- Usievaład Čorny <anibyl@riseup.net>
+- Usievaład Kimajeŭ <usievalad@gmail.com>
+- Vassiliy Kudryashov <Vassiliy.Kudryashov@jetbrains.com>
+- vaukalak <lahmataja.pa4vara@gmia>
+- vladimir.krivosheev <vladimir.krivosheev@jetbrains.com>
+- Vladimir Krivosheev <vladimir.krivosheev@jetbrains.com>
+- winmain <d.winmain@gmail.com>
+- Yannick Dominguez <yannick.dominguez@gmail.com>
+- yannick <yannnick.dominguez@gmail.com>

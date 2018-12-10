@@ -1,0 +1,47 @@
+Haxe File
+  CLASS_DECLARATION
+    HaxePsiToken:class('class')
+    COMPONENT_NAME
+      IDENTIFIER
+        HaxePsiToken:ID('ExtendsImplements')
+    INHERIT_LIST
+      EXTENDS_DECLARATION
+        HaxePsiToken:extends('extends')
+        TYPE
+          REFERENCE_EXPRESSION
+            IDENTIFIER
+              HaxePsiToken:ID('Bar')
+      HaxePsiToken:,(',')
+      IMPLEMENTS_DECLARATION
+        HaxePsiToken:implements('implements')
+        TYPE
+          REFERENCE_EXPRESSION
+            IDENTIFIER
+              HaxePsiToken:ID('Test')
+    HaxePsiToken:{('{')
+    CLASS_BODY
+      <empty list>
+    HaxePsiToken:}('}')
+  PsiComment(MSL_COMMENT)('//logtalk 3')
+  CLASS_DECLARATION
+    HaxePsiToken:class('class')
+    COMPONENT_NAME
+      IDENTIFIER
+        HaxePsiToken:ID('ExtendsImplements')
+    INHERIT_LIST
+      EXTENDS_DECLARATION
+        HaxePsiToken:extends('extends')
+        TYPE
+          REFERENCE_EXPRESSION
+            IDENTIFIER
+              HaxePsiToken:ID('Bar')
+      IMPLEMENTS_DECLARATION
+        HaxePsiToken:implements('implements')
+        TYPE
+          REFERENCE_EXPRESSION
+            IDENTIFIER
+              HaxePsiToken:ID('Test')
+    HaxePsiToken:{('{')
+    CLASS_BODY
+      <empty list>
+    HaxePsiToken:}('}')

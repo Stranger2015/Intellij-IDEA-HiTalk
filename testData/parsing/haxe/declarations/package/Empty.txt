@@ -1,0 +1,4 @@
+Haxe File
+  PACKAGE_STATEMENT
+    HaxePsiToken:package('package')
+    HaxePsiToken:;(';')

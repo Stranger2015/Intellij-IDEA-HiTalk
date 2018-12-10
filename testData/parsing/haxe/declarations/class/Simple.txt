@@ -1,0 +1,10 @@
+Haxe File
+  CLASS_DECLARATION
+    HaxePsiToken:class('class')
+    COMPONENT_NAME
+      IDENTIFIER
+        HaxePsiToken:ID('Simple')
+    HaxePsiToken:{('{')
+    CLASS_BODY
+      <empty list>
+    HaxePsiToken:}('}')

@@ -1,0 +1,24 @@
+Haxe File
+  CLASS_DECLARATION
+    HaxePsiToken:class('class')
+    COMPONENT_NAME
+      IDENTIFIER
+        HaxePsiToken:ID('Multiextends')
+    INHERIT_LIST
+      EXTENDS_DECLARATION
+        HaxePsiToken:extends('extends')
+        TYPE
+          REFERENCE_EXPRESSION
+            IDENTIFIER
+              HaxePsiToken:ID('Bar')
+      HaxePsiToken:,(',')
+      EXTENDS_DECLARATION
+        HaxePsiToken:extends('extends')
+        TYPE
+          REFERENCE_EXPRESSION
+            IDENTIFIER
+              HaxePsiToken:ID('BadBar')
+    HaxePsiToken:{('{')
+    CLASS_BODY
+      <empty list>
+    HaxePsiToken:}('}')

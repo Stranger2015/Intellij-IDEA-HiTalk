@@ -1,0 +1,14 @@
+out/
+.DS_Store
+.idea/
+.iml
+.project
+idea-IU
+/idea-IU*
+/build/
+/build_test/
+local-build-overrides.xml
+intellij-logtalk*.jar
+/gen/
+
+

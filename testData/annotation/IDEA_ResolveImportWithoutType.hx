@@ -1,0 +1,1 @@
+import logtalk.macro.Tools;
