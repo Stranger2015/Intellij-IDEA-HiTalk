@@ -1,16 +1,14 @@
 Contributing
 ============
 
-NOTE: The development team is currently supporting IDEA versions 2016 and later.
-Support for version 13.1 been removed as of release 0.9.8.* &nbsp; Support for versions
-14 and 15 are stopped as of release 0.11.2.
+NOTE: The development team is currently supporting IDEA versions 2018.3 and later.
 
 ## Reporting errors  
 ------------------
 
 Things that will help us fix your bug:
 
-- A minimal code example. For example if you have some completion issue, you can add the simplest Haxe that
+- A minimal code example. For example if you have some completion issue, you can add the simplest Logtalk that
 can reproduce the issue.
 
 - We’d like to know your:
@@ -19,7 +17,7 @@ can reproduce the issue.
     - OS and OS version
     - JDK version
 
-- Check if the bug already exists at the [HaxeFoundation repository](https://github.com/HaxeFoundation/intellij-logtalk/issues).
+- Check if the bug already exists at the [Logtalk Community repository](https://github.com/Logtalk Community/intellij-logtalk/issues).
  If it does, add your example to the discussion.
 
 ## Development Environment
@@ -27,7 +25,7 @@ can reproduce the issue.
 
 You will need the release version of Intellij IDEA Ultimate 2016.1 or later to develop the plugin.
 *There are reports that you can develop with IDEA Community Edition, though extended functionality such as
-diagrams and hierarchy panels will not be available and you wont be able to test their Haxe equivalents.*
+diagrams and hierarchy panels will not be available and you wont be able to test their Logtalk equivalents.*
 
 ### Plugins
 Install the following plugins [from Intellij IDEA plugin manager](https://www.jetbrains.com/idea/plugins/).
@@ -44,8 +42,8 @@ Install the following plugins [from Intellij IDEA plugin manager](https://www.je
 #### Optional, install if you want to modify lexer/parser:
 - JFlex (for lexer compilation)
 
-IntelliJ IDEA uses the Grammar-Kit plugin to generate its lexer and parser for Haxe and HXML.
-The grammar file for Haxe is [logtalk.bnf](https://github.com/JetBrains/intellij-logtalk/blob/master/grammar/logtalk.bnf).
+IntelliJ IDEA uses the Grammar-Kit plugin to generate its lexer and parser for Logtalk and HXML.
+The grammar file for Logtalk is [logtalk.bnf](https://github.com/JetBrains/intellij-logtalk/blob/master/grammar/logtalk.bnf).
 The grammar file for HXML is [hxml.bnf](https://github.com/JetBrains/intellij-logtalk/blob/master/src/common/com/intellij/plugins/logtalk/hxml/hxml.bnf).
 
 #### Enable the PSI Viewer
@@ -82,7 +80,7 @@ other goodies and their suggested methods for modifying properties.
 
 #### Incompatibilities
 Do NOT install the logtalk support plugin if you want to hack on it.  The installed plugin will be loaded and
-override your newly built one.  Running the "Haxe" plugin can only use the version you've built if there
+override your newly built one.  Running the "Logtalk" plugin can only use the version you've built if there
 isn't one already in place.  (Don't worry, when you are running or debugging, the plugin support is
 enabled in the test instance of Idea that is launched.)
 
@@ -97,11 +95,11 @@ particularly if you see ClassNotFound exceptions when attempting to run the plug
 ### Video tutorials from [as3Boyan](https://github.com/as3boyan)
 
 *Installation*  
-- [Setup IntellliJ IDEA for Haxe Plugin development](http://youtu.be/MwrzdBFaZkc)
+- [Setup IntellliJ IDEA for Logtalk Plugin development](http://youtu.be/MwrzdBFaZkc)
 
 *How to write plugin code*    
 - [How to develop intention actions.](https://www.youtube.com/watch?v=-mY_DpzVDFs)   
-- [How to extend HXML completion using haxelib.](https://www.youtube.com/watch?v=B8zOSEEK7As)  
+- [How to extend HXML completion using logtalk__lib.](https://www.youtube.com/watch?v=B8zOSEEK7As)  
 - [How to build a completion contributor for HXML.](https://www.youtube.com/watch?v=UBxuj2ToizY)  
 
 ## Building
@@ -109,16 +107,15 @@ particularly if you see ClassNotFound exceptions when attempting to run the plug
 
 Contributors are expected to have and build against each of the latest 
 sub-release of each major and minor version of IDEA that is supported 
-by the plugin team.  At the time of this writing, that would be 2016.1.4, 
-2016.2.5, 2016.3.7, 2017.1.5, and 2017.2.6, and 2017.3.3.
+by the plugin team.  At the time of this writing that would be 2018.3.
 As new versions are released this will continue to be
 a moving target, as we attempt to keep up with the development community.
 
 We do NOT expect contributors to keep up to date with EAP releases, nor does 
 the team support them (though the plugin may work, and will usually install).
 
-*IDEA releases 2016 and later require JDK 8.  That build environment has
-been successfully used for this plugin, targeting Java6 for builds prior to 2016.x.*
+*IDEA releases 2018 and later require JDK 8. That build environment has
+been successfully used for this plugin.*
 
 #### Ant Builds
 
@@ -194,7 +191,6 @@ you can create one. It is a single line file with the following format:
 
 * A two character product prefix (e.g. IU for IDEA Ultimate, IC for community edition, and so on)  
 * a dash ("-")  
-* code line ID (e.g. 161 for IDEA 2016.1.x, 172 for IDEA 2017.2.x, etc.)  
 * a dot (".")  
 * build number (e.g. 1286)    
 * a dot -- optional, but mandatory if a patch number is supplied  
@@ -221,7 +217,7 @@ line all of the time.  Plus, your extra build goodies become available inside of
 Here is a minimalist example:
 
     <project name="local-overrides">
-      <property name="idea.ultimate.build" location="/home/username/intellij_idea/idea-IU-135.1286/" />
+      <property name="idea.ultimate.build" location="/home/username/intellij_idea/idea-IU- 5.1286/" />
     </project>
 
 Here is a version from one of our team members:
@@ -288,9 +284,11 @@ normal IDEA make, build, or what-have-you from the Build menu runs and does
 its thing.  You will see a few ant messages scroll by, and then the normal
 IDEA output will be seen.
 
-##### Yes, Build Errors Are Expected
+##### Yes, Build Errors Are Expected+      `1`
 
 ###### Syntax Errors
+**Most likely ANTLR 4.7 with adaptor will be used**
+
 First thing: You *MUST* build the project to generate the PSI sources.  Until you
 do, you will have missing classes in many places that will magically disappear when
 you build (or when the ant `common.generateTemplatedFiles` target executes).
@@ -305,14 +303,6 @@ We decided to make the default settings be correct for IDEA v2016.x. However, to
 build other versions, you can either use the ant builds (see 
 ![Ant Builds][Ant Builds] above), or you can change 
 the project structure to match the environment you're trying to build.
-
-So, for 13.1.6, open "File->Project Structure->Module->intellij-logtalk->Sources(tab)," and change this:
-![Project Structure for IDEA 14](./doc/Idea_Project_Structure_for_v14.png)
-
-to this:  
-![Project Structure for IDEA 13](./doc/Idea_Project_Structure_for_v13.png)
-
-Then try to rebuild.
 
 Unfortunately, IDEA will not allow multiple modules (.iml files) with the same
 source root, so we can't have a configuration for each build type.
@@ -406,12 +396,12 @@ Goals:
 
 #### Where we are working:
 
-- Future work will take place on the HaxeFoundation/intellij-logtalk/master branch (really, using short-lived
+- Future work will take place on the Logtalk Community/intellij-logtalk/master branch (really, using short-lived
 local branches off of that).
 
 #### Where we will release:
 
-- Releases will (usually, simultaneously) occur on the HaxeFoundation/intellij-logtalk repo,
+- Releases will (usually, simultaneously) occur on the Logtalk Community/intellij-logtalk repo,
 jetbrains/intellij-logtalk repo, and the IDEA plugin repository.  Releases will be made
 through the github release mechanism.  Binary output (e.g. intellij-logtalk.jar) is no longer
 kept in the source tree in the repository.
@@ -422,22 +412,22 @@ kept in the source tree in the repository.
 release notes, commit, tag the build, and create a pull request to JetBrains.  Updating
 the release notes primarily means adding release notes to src/META-INF/plugin.xml, and
 echoing them to CHANGELOG.md.
-- A github "release" will be created on the HaxeFoundation/intellij-logtalk repository.  Binary (.jar) files
+- A github "release" will be created on the Logtalk Community/intellij-logtalk repository.  Binary (.jar) files
 for all currently built Idea target versions of the plugin will be added to the release.
 - The released plugin (.jar files)  will be uploaded to the JetBrains IntelliJ IDEA plugin 
 repository.
 
 #### Release environments:
 
-- Haxe Foundation releases will be built and smoke tested for the following environments:  
+- Logtalk Community releases will be built and smoke tested for the following environments:  
    OS: Linux(Ubuntu14.04), OSX, Windows  
    JVM: Sun Java 1.8 compilers  
    IDEA versions: 2016.3.7, 2017.1.5, 2017.2.6, 2017.3.3.
-- JetBrains releases will be copies of the Haxe Foundation releases.  
+- JetBrains releases will be copies of the Logtalk Community releases.  
 
 #### Who will test:
 
-- Interested Community members will test the HaxeFoundation release environments.  
+- Interested Community members will test the Logtalk Community release environments.  
   Community members will ensure that the product can be loaded into the various 
   environments prior to release.  Lack of interest from the community may delay releases.
 
@@ -473,10 +463,7 @@ then copy the relevant section to CHANGELOG.md.
 can test and tag it.
 
 4. Build *each* of the releases: For each release, run make (or your local equivalent) 
-    - `IDEA_VERSION=2016.3.5 make`
-    - `IDEA_VERSION=2017.2 make`
-    - `IDEA_VERSION=2017.3 make`
-    - `IDEA_VERSION=2018.1 make`
+    - `IDEA_VERSION=2018.3 make`
 
 5. Smoke test *each* of the releases.  A smoke test includes loading the releases in a primary instance of IDEA and verifying 
 basic functionality:  
@@ -500,7 +487,7 @@ basic functionality:
 5. Push the release back up to master: `git push origin master; git push --tags origin master`
 
 6. Create a release on github, using the tag you just created:
-    - [https://github.com/HaxeFoundation/intellij-logtalk/releases](https://github.com/HaxeFoundation/intellij-logtalk/releases)
+    - [https://github.com/LogtalkCommunity/intellij-logtalk/releases](https://github.com/LogtalkCommunity/intellij-logtalk/releases)
     - Sign in and draft a new release, using the tag you just added. 
     - Upload all of the release jars to the release.
     - Add the change notes for the most recent changes (between this release and the last).
@@ -527,7 +514,7 @@ Here’s how:
 4. Update src/META-INF/plugin.xml with the change description in the top (Usually "Unreleased changes"
 section).
 5. When your work is complete, merge current sources from master up to your branch, re-test locally,
-then push your branch to HaxeFoundation/intellij-logtalk.  Travis-ci will automatically start a build and test cycle
+then push your branch to LogtalkCommunity/intellij-logtalk.  Travis-ci will automatically start a build and test cycle
 applying your changes against the master branch.
 6. Create a pull request, and wait for comments.
 7. If you get comments that require changes, address those and return to step 2.
@@ -539,7 +526,7 @@ that has conflicts requires manual resolution and must be re-tested locally prio
 team members, the original requester will be the person to merge since they are best suited to address
 conflicts.  Merges from occasional contributors will be merged by a team member as time and
 resource becomes available.
-9. Check the Travis-ci output (https://travis-ci.org/HaxeFoundation/intellij-logtalk/builds) to ensure that
+9. Check the Travis-ci output (https://travis-ci.org/LogtalkCommunity/intellij-logtalk/builds) to ensure that
 everything built correctly. 
 
 

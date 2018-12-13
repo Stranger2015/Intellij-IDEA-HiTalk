@@ -1,15 +1,15 @@
 # Changelog
-  <p>1.0.1 (HaxeFoundation release)</p>
+  <p>1.0.1 (Logtalk Community release)</p>
   <ul>
     <li>Updated change notes for 1.0.0 (enumerated several important import changes).</li>
-    <li>Add Haxe Sdk setup validation.</li>
+    <li>Add Logtalk Sdk setup validation.</li>
     <li>Use SDK classpath as well as sourcepath to find the standard library. (Issue #774)</li>
     <li>Better error handling when haxelibs are installed incorrectly. (Issue #780)</li>
     <li>2017.3 and 2018.1 builds. (Issues #719, #789)</li>
     <li>Workaround debugger crash. (Issue #792)</li>
     <li>Fix typo in haxelib metadata parser, which was keeping library sub-tree source directories from being found.</li>
   </ul>
-  <p>1.0.0 (HaxeFoundation release)</p>
+  <p>1.0.0 (Logtalk Community release)</p>
   <ul>
     <li>Import of static fields/methods.</li>
     <li>Imports alias hinting support.</li>
@@ -53,7 +53,8 @@
     <li>Fixed parsing of 'throw' statements within a ternary expression. (Issue #704)</li>
     <li>Allow all string literal forms as field identifiers in structures. (Issue #662)</li>
   </ul>
-  <p>0.11.2: (Haxe Foundation Release)</p>
+  <p>0.11.2: (Logtalk Community Release)</p>
+  <p>0.11.2: (Logtalk Community Release)</p>
   <ul>
     <li>Parsing fixes: </li>
     <ul>
@@ -73,7 +74,7 @@
       <li>Block statements when used as an initializer.</li>
     </ul>
     <li>Fix NPE when haxelib.json was missing from a library.</li>
-    <li>Fix an exception when the Haxe SDK is set up incorrectly.</li>
+    <li>Fix an exception when the Logtalk SDK is set up incorrectly.</li>
     <li>Added Adobe AIR target</li>
     <li>Refactor haxelib library dependency detection and project update.</li>
     <li>For FindUsages, ask whether to search for base class/interface usages.</li>
@@ -98,7 +99,7 @@
     <li>Speed haxelib syncing (and stop unnecessary re-indexing).  (Regression)</li>
     <li>Fix freezes by fixing some multi-threading issues and other exceptions being thrown.</li>
     <li>Speed up parsing of arrow functions.</li>
-    <li>Add Haxe-specific double-click selection logic for strings and comments. (Issue #212)</li>
+    <li>Add Logtalk-specific double-click selection logic for strings and comments. (Issue #212)</li>
     <li>Reroute debugging informational errors to the status bar instead of modal dialogs. </li>
     <li>Fix compilation halting on "- Link" informational messages.</li>
     <li>Add neko and haxelib directories to the path when building projects (for all platforms; used to be OSX-only).</li>
@@ -125,7 +126,7 @@
     <li>Added searching of implementation declared by superclasses.</li>
     <li>Properly parse and evaluate compiler conditionals (#if...#else...#end)</li>
     <li>Resolve array access with types other than "Array."</li>
-    <li>Better 'Main class' chooser for the 'Project Settings-&gt;Haxe Compiler' dialog.</li>
+    <li>Better 'Main class' chooser for the 'Project Settings-&gt;Logtalk Compiler' dialog.</li>
     <li>Fix property getter/setter quick-fixes.</li>
     <li>Add location data, if known, to compiler completion error messages.</li>
     <li>Display available completions even when the compiler reports an error.</li>
@@ -140,7 +141,7 @@
     <li>Fix parsing when an anonymous function call is defined and immediately executed. (Issue #544)</li>
     <li>Fix library name parsing issues for haxelibs using non-standard paths.</li>
     <li>Resolve URLs properly when adding haxelibs.</li>
-    <li>Updated Haxe logo bitmaps.</li>
+    <li>Updated Logtalk logo bitmaps.</li>
   </ul>
   <p>0.10.1: (community release)</p>
   <ul>
@@ -160,7 +161,7 @@
     <li>Fix 'never' setter. (issue #486)</li>
     <li>Change class paths for external libraries on OSX.</li>
     <li>Fixed creating classes in TEST source roots</li>
-    <li>Fixed debug Flash on Haxe-compiler target</li>
+    <li>Fixed debug Flash on Logtalk-compiler target</li>
     <li>Fixed crash on MACRO_CLASS_LIST assert</li>
     <li>@:deprecated support (issue #459, #473)</li>
     <li>Alias imports support (issue #466)</li>
@@ -209,7 +210,7 @@
     <li>Using file with multiple helper classes typedefs (for example `logtalk.macro.Tools`) (TiVo Issue #128)</li>
     <li>Allow short assignment syntax for generics. (TiVo Issue #388)</li>
     <li>Fixed expected package name to no longer reference the system root. (TiVo Issue #387)</li>
-    <li>Save and restore OpenFL arguments on the Haxe Module settings dialog. (TiVo Issue #74)</li>
+    <li>Save and restore OpenFL arguments on the Logtalk Module settings dialog. (TiVo Issue #74)</li>
     <li>Fixed repainting issue for OpenFL dialog when selecting compiler types. (TiVo Issue #44)</li>
     <li>Fixed error parsing for Windows platforms.</li>
   </ul>
@@ -230,7 +231,7 @@
         multiple files have the same package names.
     </li>
     <li>Use implicit classpath entries during classpath operations. (e.g. logtalk/std)</li>
-    <li>Remove "statics of XXX" from the debugger variable window pane.  (The Haxe debugger
+    <li>Remove "statics of XXX" from the debugger variable window pane.  (The Logtalk debugger
         at http://github.com/tivo/hxcpp-debugger has been updated to show statics
         as part of the object tree for objects in view.
     </li>
@@ -288,7 +289,7 @@
     <li>Fix local variable name suggestions to not clash with existing class fields.</li>
     <li>Fix Introduce Variable refactoring to find all occurrences of the selected expression.</li>
     <li>
-      No longer block Java (and other) tests from running when Haxe
+      No longer block Java (and other) tests from running when Logtalk
       plugin is installed. (Issue #166)
     </li>
     <li>
@@ -321,7 +322,7 @@
   </ul>
   <p>0.9.2: (community release, IDEA 14 only)</p>
   <ul>
-    <li>Fixed: HaxeReferenceCopyPasteProcessor issue preventing from using copy paste clipboard functionality</li>
+    <li>Fixed: LogtalkReferenceCopyPasteProcessor issue preventing from using copy paste clipboard functionality</li>
   </ul>
   <p>0.9: (community release)</p>
   <ul>
@@ -331,9 +332,9 @@
   <ul>
     <li>Class Hierarchy view panels implemented. (Menu->Navigate->Type Hierarchy, et al)</li>
     <li>Better handling of import files.</li>
-    <li>Better handling of Haxe language parsing, including many Haxe 3 features.</li>
+    <li>Better handling of Logtalk language parsing, including many Logtalk 3 features.</li>
     <li>Automatic detection and use of installed logtalk libraries (using the 'haxelib' command).</li>
-    <li>Better completion (Ctrl-space) using the Haxe compiler -- OpenFL projects only.</li>
+    <li>Better completion (Ctrl-space) using the Logtalk compiler -- OpenFL projects only.</li>
     <li>Refactorings:
       <ul>
         <li>Pull up members from class to super-class</li>
@@ -349,7 +350,7 @@
       <ul>
         <li>Refactoring: Pull up members from class to super-class</li>
         <li>Refactoring: Pull up members from class to interface</li>
-        <li>Launch Haxe/Neko tests (Patch #131)</li>
+        <li>Launch Logtalk/Neko tests (Patch #131)</li>
       </ul>
     </li>
     <li>
@@ -385,7 +386,7 @@
       <p>0.8.1.1.TiVo.ClassHierarchy.12: (community version, TiVo RC1+Fixes)</p>
       <ul>
         <li>Auto-indent when adding curly brackets now works correctly. Fixes github tivo/intellij-logtalk Issue #119. (Thanks, Jérémy!)</li>
-        <li>Fix IDE hang on completion for Haxe compiler completions.</li>
+        <li>Fix IDE hang on completion for Logtalk compiler completions.</li>
         <li>Fix auto-adding new import statements above package declaration and/or comments.</li>
         <li>Fix NPE when manually adding new import statements.</li>
         <li>Put debugging dialogs on the UI thread.</li>
@@ -407,7 +408,7 @@
     <li>
       <p>0.8.1.1.TiVo.ClassHierarchy.9: (community version, TiVo WIP)</p>
       <ul>
-        <li> Fixed Haxe command-line debugger integration for OpenFL projects that
+        <li> Fixed Logtalk command-line debugger integration for OpenFL projects that
              are targetting C++ native runtime environments.
         </li>
         <li> Fixed method hierarchy runtime exceptions, and auto-scrolling to source. </li>
@@ -432,7 +433,7 @@
         </li>
         <li> Updated unit tests. Issues: #71, #68.</li>
         <li> Fix formatting for ">=", which is used be to reformatted to "> =". Issue </li>
-        <li> Fix logic for HaxeIfSurrounder.java /testIf test case/ </li>
+        <li> Fix logic for LogtalkIfSurrounder.java /testIf test case/ </li>
       </ul>
     </li>
     <li>
@@ -451,22 +452,22 @@
         <li>HXML completion: add parameters for compiler argument to
             presentable text of completion item
         </li>
-        <li>Completion from Haxe compiler: parse function parameters and
+        <li>Completion from Logtalk compiler: parse function parameters and
             return type to generate completion item with parameters and return
             type
         </li>
-        <li>Completion from Haxe compiler: format data from compiler replace
+        <li>Completion from Logtalk compiler: format data from compiler replace
             "&lt;" to "<" and "&gt;" to ">"
         </li>
-        <li>HaxeReferenceImpl.java getVariants(completion): Handle case when
+        <li>LogtalkReferenceImpl.java getVariants(completion): Handle case when
             "var d:Array<Int> = []; d.|" when d is not resolved
         </li>
-        <li>Add description to completion recived from Haxe compiler:
-            HaxeMetaTagsCompletionContributor.java
+        <li>Add description to completion recived from Logtalk compiler:
+            LogtalkMetaTagsCompletionContributor.java
             HXMLDefineCompletionContributor.java
             HXMLCompilerArgumentsCompletionContributor.java
         </li>
-        <li>Preliminary Haxe compiler completion support (OpenFL only)</li>
+        <li>Preliminary Logtalk compiler completion support (OpenFL only)</li>
       </ul>
     </li>
     <li>
@@ -480,7 +481,7 @@
         <li>HXML completion: Provide available libraries list</li>
         <li>HXML completion: show installed haxelibs(also installed libs removed from available haxelibs list)</li>
         <li>Fix meta tag parsing issues</li>
-        <li>HaxeMetaTagsCompletionContributor provides completion for meta tags</li>
+        <li>LogtalkMetaTagsCompletionContributor provides completion for meta tags</li>
         <li>Project Xml(NME, OpenFL project project) completion: show available and installed haxelibs</li>
         <li>SplitIntoDeclarationAndAssignment intention action</li>
       </ul>
@@ -519,7 +520,7 @@
    <ul>
     <li>"Find usages in project" fixed.</li>
     <li>Allowed @:final on methods and fields.</li>
-    <li>Re-implemented hxcpp debugger support to work with Haxe v3 built-in debugger</li>
+    <li>Re-implemented hxcpp debugger support to work with Logtalk v3 built-in debugger</li>
    </ul>
   <p>0.8.1: (community version)</p>
    <ul>
@@ -538,7 +539,7 @@
     <li>New version number</li>
     <li>basic hxml support</li>
     <li>@:jsRequire meta support</li>
-    <li>Haxe grammar: @:jsRequire and macro support</li>
+    <li>Logtalk grammar: @:jsRequire and macro support</li>
     <li>templates naming fix ("create new class/enum/interface" issue)</li>
     <li>new/get/set/never keywords, get/set identifiers are valid, jar build</li>
    </ul>
@@ -573,7 +574,7 @@
    </ul>
   <p>0.6.1:</p>
    <ul>
-    <li>Haxe 3 support</li>
+    <li>Logtalk 3 support</li>
    </ul>
   <p>0.6:</p>
    <ul>
@@ -681,16 +682,16 @@
     <li>Color settings</li>
     <li>Code formatter</li>
     <li>Go to Class</li>
-    <li>Icons for Haxe files</li>
+    <li>Icons for Logtalk files</li>
     <li>Search for usages</li>
     <li>Highlight symbol occurencies</li>
     <li>Debugger for Flash target ("Flash/Flex Support" plugin required)</li>
    </ul>
   <p>0.1:</p>
    <ul>
-    <li>Haxe module and SDK</li>
-    <li>Parsing Haxe files</li>
+    <li>Logtalk module and SDK</li>
+    <li>Parsing Logtalk files</li>
     <li>Keyword completion</li>
-    <li>Compile Haxe files and run in Neko VM</li>
+    <li>Compile Logtalk files and run in JVM</li>
    </ul>
 

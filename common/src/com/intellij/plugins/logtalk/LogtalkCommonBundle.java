@@ -17,12 +17,12 @@
  */
 package com.intellij.plugins.logtalk;
 
-import com.intellij.CommonBundle;
-import com.intellij.reference.SoftReference;
+
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.PropertyKey;
 
 import java.lang.ref.Reference;
+import java.lang.ref.SoftReference;
 import java.util.ResourceBundle;
 
 /**
@@ -33,9 +33,14 @@ public class LogtalkCommonBundle {
 
   @NonNls
   public static final String BUNDLE = "LogtalkCommonBundle";
-
-  public static String message(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
-    return CommonBundle.message(getBundle(), key, params);
+  private static String ourKey;
+  private static Object[] ourParams;
+''
+  public static String message(@PropertyKey( ResourceBundle = BUNDLE) String key, Object... params) {
+    ourKey = key;
+    ourParams = params;
+    String message = LogtalkCommonBundle.message(ResourceBundle.getBundle(), key, params);
+    return message;
   }
 
   private static ResourceBundle getBundle() {
